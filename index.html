@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acelerador de Audiência | Empire — Transforme-se em Referência de Mercado</title>
+  <meta name="description" content="O programa de 24 semanas que transforma CEOs e especialistas em referências reconhecíveis. Construa um ativo de autoridade que gera demanda previsível.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            empire: {
+              bg: '#0a0a0b',
+              surface: '#111113',
+              card: '#18181b',
+              border: '#27272a',
+              muted: '#71717a',
+              text: '#fafafa',
+              gold: '#c9a962',
+              goldLight: '#e4d4a5',
+              goldDark: '#9a7b3c',
+            }
+          },
+          fontFamily: {
+            display: ['Cormorant Garamond', 'serif'],
+            body: ['DM Sans', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --gold-gradient: linear-gradient(135deg, #c9a962 0%, #e4d4a5 50%, #c9a962 100%);
+      --gold-text: #c9a962;
+    }
+
+    * {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: #0a0a0b;
+      color: #fafafa;
+    }
+
+    .font-display {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    /* Gold gradient text */
+    .text-gold-gradient {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Gold border gradient */
+    .border-gold-gradient {
+      border: 1px solid transparent;
+      background: linear-gradient(#18181b, #18181b) padding-box,
+                  linear-gradient(135deg, #c9a962, #e4d4a5, #c9a962) border-box;
+    }
+
+    /* Premium button */
+    .btn-premium {
+      background: var(--gold-gradient);
+      color: #0a0a0b;
+      font-weight: 600;
+      padding: 1rem 2.5rem;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-premium::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .btn-premium:hover::before {
+      left: 100%;
+    }
+
+    .btn-premium:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 40px rgba(201, 169, 98, 0.3);
+    }
+
+    /* Secondary button */
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid #c9a962;
+      color: #c9a962;
+      padding: 1rem 2.5rem;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(201, 169, 98, 0.1);
+      transform: translateY(-2px);
+    }
+
+    /* Hero background */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/hero-bg.png');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.4;
+      z-index: 0;
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(10,10,11,0.3) 0%, rgba(10,10,11,0.9) 70%, rgba(10,10,11,1) 100%);
+    }
+
+    /* Grid pattern overlay */
+    .grid-pattern {
+      background-image:
+        linear-gradient(rgba(201, 169, 98, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201, 169, 98, 0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    /* Fade in up animation */
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Stagger children */
+    .stagger-children > * {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .stagger-children.visible > *:nth-child(1) { transition-delay: 0.1s; }
+    .stagger-children.visible > *:nth-child(2) { transition-delay: 0.2s; }
+    .stagger-children.visible > *:nth-child(3) { transition-delay: 0.3s; }
+    .stagger-children.visible > *:nth-child(4) { transition-delay: 0.4s; }
+    .stagger-children.visible > *:nth-child(5) { transition-delay: 0.5s; }
+    .stagger-children.visible > *:nth-child(6) { transition-delay: 0.6s; }
+
+    .stagger-children.visible > * {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Card hover effect */
+    .card-hover {
+      transition: all 0.4s ease;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
+
+    /* Logo grayscale */
+    .logo-item {
+      filter: grayscale(100%) brightness(0.7);
+      opacity: 0.6;
+      transition: all 0.3s ease;
+    }
+
+    .logo-item:hover {
+      filter: grayscale(0%) brightness(1);
+      opacity: 1;
+    }
+
+    /* Section divider */
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(201, 169, 98, 0.3), transparent);
+    }
+
+    /* Phase timeline */
+    .phase-connector {
+      position: relative;
+    }
+
+    .phase-connector::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 100%;
+      width: 2px;
+      height: 40px;
+      background: linear-gradient(180deg, rgba(201, 169, 98, 0.5), transparent);
+    }
+
+    .phase-connector:last-child::after {
+      display: none;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #0a0a0b;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #27272a;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #c9a962;
+    }
+
+    /* FAQ accordion */
+    .faq-item {
+      border-bottom: 1px solid rgba(201, 169, 98, 0.1);
+    }
+
+    .faq-question {
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .faq-question:hover {
+      color: #c9a962;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+      padding-bottom: 1.5rem;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-icon {
+      transition: transform 0.3s ease;
+    }
+
+    /* Number counter animation */
+    .counter {
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Mobile menu */
+    .mobile-menu {
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .mobile-menu.active {
+      transform: translateX(0);
+    }
+
+    /* Testimonial card shine */
+    .shine-effect {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .shine-effect::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -75%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.05),
+        transparent
+      );
+      animation: shine 4s infinite;
+    }
+
+    @keyframes shine {
+      0% { left: -75%; }
+      100% { left: 125%; }
+    }
+
+    /* Pulse ring for CTA */
+    .pulse-ring {
+      position: relative;
+    }
+
+    .pulse-ring::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border: 2px solid #c9a962;
+      border-radius: 2px;
+      animation: pulse-ring 2s infinite;
+    }
+
+    @keyframes pulse-ring {
+      0% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(1.1); opacity: 0; }
+    }
+
+    /* Founder image hover */
+    .founder-img {
+      transition: all 0.4s ease;
+      filter: grayscale(30%);
+    }
+
+    .founder-card:hover .founder-img {
+      filter: grayscale(0%);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body class="bg-empire-bg text-empire-text antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-empire-bg/80 backdrop-blur-md border-b border-empire-border">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <a href="#" class="flex items-center">
+          <img src="images/logos/Logo Empire.png" alt="Empire" class="h-10 w-auto">
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#problema" class="text-empire-muted hover:text-empire-gold transition-colors text-sm tracking-wide">O Problema</a>
+          <a href="#solucao" class="text-empire-muted hover:text-empire-gold transition-colors text-sm tracking-wide">A Solução</a>
+          <a href="#metodologia" class="text-empire-muted hover:text-empire-gold transition-colors text-sm tracking-wide">Metodologia</a>
+          <a href="#sobre" class="text-empire-muted hover:text-empire-gold transition-colors text-sm tracking-wide">Sobre</a>
+          <a href="#faq" class="text-empire-muted hover:text-empire-gold transition-colors text-sm tracking-wide">FAQ</a>
+        </div>
+
+        <!-- CTA Button -->
+        <div class="hidden md:block">
+          <a href="#cta" class="btn-secondary text-sm tracking-wide">APLICAR AGORA</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden text-empire-text p-2">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu fixed inset-y-0 right-0 w-72 bg-empire-surface border-l border-empire-border md:hidden">
+      <div class="p-6">
+        <button id="close-menu-btn" class="absolute top-6 right-6 text-empire-muted">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+        <div class="mt-12 flex flex-col space-y-6">
+          <a href="#problema" class="text-empire-text hover:text-empire-gold transition-colors">O Problema</a>
+          <a href="#solucao" class="text-empire-text hover:text-empire-gold transition-colors">A Solução</a>
+          <a href="#metodologia" class="text-empire-text hover:text-empire-gold transition-colors">Metodologia</a>
+          <a href="#sobre" class="text-empire-text hover:text-empire-gold transition-colors">Sobre</a>
+          <a href="#faq" class="text-empire-text hover:text-empire-gold transition-colors">FAQ</a>
+          <div class="pt-6 border-t border-empire-border">
+            <a href="#cta" class="btn-premium block text-center text-sm">APLICAR AGORA</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div class="hero-bg"></div>
+    <div class="grid-pattern absolute inset-0 z-10"></div>
+
+    <div class="relative z-20 max-w-6xl mx-auto px-6 lg:px-8 py-32 text-center">
+      <div class="fade-in-up">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-empire-gold/30 bg-empire-gold/5 mb-8">
+          <span class="w-2 h-2 bg-empire-gold rounded-full animate-pulse"></span>
+          <span class="text-empire-gold text-sm tracking-widest uppercase">Vagas Limitadas — Ciclo 2025</span>
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tight mb-6">
+          <span class="text-gold-gradient">Acelerador</span>
+          <br>
+          <span class="text-empire-text">de Audiência</span>
+        </h1>
+
+        <!-- Subheadline -->
+        <p class="text-xl md:text-2xl text-empire-muted max-w-3xl mx-auto mb-6 font-light">
+          O programa que transforma <span class="text-empire-text">CEOs e especialistas</span> em referências reconhecíveis em <span class="text-empire-gold">24 semanas</span>
+        </p>
+
+        <!-- Benefits list -->
+        <div class="flex flex-wrap justify-center gap-4 md:gap-8 mb-12 text-sm md:text-base text-empire-muted">
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-empire-gold" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span>Escala sem perder identidade</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-empire-gold" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span>Demanda previsível</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-empire-gold" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span>Sistema delegável</span>
+          </div>
+        </div>
+
+        <!-- CTA Button -->
+        <a href="#cta" class="btn-premium inline-flex items-center gap-3 text-lg tracking-wide">
+          QUERO SER REFERÊNCIA NO MEU MERCADO
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+
+        <p class="mt-6 text-empire-muted text-sm">Resposta em até 48h úteis</p>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 animate-bounce">
+      <svg class="w-6 h-6 text-empire-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Social Proof - Brands -->
+  <section class="py-20 bg-empire-surface border-y border-empire-border">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <p class="text-empire-gold text-sm tracking-widest uppercase mb-4">Confiança Institucional</p>
+        <h2 class="font-display text-3xl md:text-4xl">Quem Confia na Empire</h2>
+      </div>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div class="text-center p-8 border-gold-gradient">
+          <p class="text-4xl md:text-5xl font-display text-gold-gradient mb-2">+30M</p>
+          <p class="text-empire-muted text-sm tracking-wide uppercase">pessoas alcançadas</p>
+        </div>
+        <div class="text-center p-8 border-gold-gradient">
+          <p class="text-4xl md:text-5xl font-display text-gold-gradient mb-2">100+</p>
+          <p class="text-empire-muted text-sm tracking-wide uppercase">líderes transformados</p>
+        </div>
+        <div class="text-center p-8 border-gold-gradient">
+          <p class="text-4xl md:text-5xl font-display text-gold-gradient mb-2">24</p>
+          <p class="text-empire-muted text-sm tracking-wide uppercase">semanas de programa</p>
+        </div>
+      </div>
+
+      <!-- Brand logos -->
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center opacity-70">
+        <img src="images/marcas/1.png" alt="Marca parceira" class="logo-item h-12 w-auto object-contain">
+        <img src="images/marcas/2.png" alt="Marca parceira" class="logo-item h-12 w-auto object-contain">
+        <img src="images/marcas/3.png" alt="Marca parceira" class="logo-item h-12 w-auto object-contain">
+        <img src="images/marcas/4.png" alt="Marca parceira" class="logo-item h-12 w-auto object-contain">
+        <img src="images/marcas/5.png" alt="Marca parceira" class="logo-item h-12 w-auto object-contain">
+        <img src="images/marcas/6.png" alt="Marca parceira" class="logo-item h-12 w-auto object-contain">
+        <img src="images/marcas/7.png" alt="Marca parceira" class="logo-item h-12 w-auto object-contain">
+        <img src="images/marcas/8.png" alt="Marca parceira" class="logo-item h-12 w-auto object-contain">
+        <img src="images/marcas/9.png" alt="Marca parceira" class="logo-item h-12 w-auto object-contain">
+        <img src="images/marcas/10.png" alt="Marca parceira" class="logo-item h-12 w-auto object-contain">
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Section -->
+  <section id="problema" class="py-24 md:py-32 relative">
+    <div class="grid-pattern absolute inset-0 opacity-50"></div>
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 relative">
+      <div class="fade-in-up">
+        <div class="max-w-4xl mx-auto text-center mb-16">
+          <p class="text-empire-gold text-sm tracking-widest uppercase mb-4">O Diagnóstico</p>
+          <h2 class="font-display text-3xl md:text-4xl lg:text-5xl leading-tight mb-8">
+            Atenção, se você é <span class="text-gold-gradient">CEO, especialista ou dono de média empresa</span> e passa por desafios em ter autoridade reconhecível no seu mercado, veja se isso acontece com você:
+          </h2>
+        </div>
+
+        <div class="prose prose-lg prose-invert max-w-4xl mx-auto text-empire-muted mb-16 text-center">
+          <p class="text-lg leading-relaxed">
+            A maioria dos líderes de negócios enfrenta estes desafios hoje. Você produz conteúdo, mas não vê retorno claro em vendas ou reconhecimento. Você tem presença online, mas as pessoas não se conectam com quem você é.
+          </p>
+          <p class="text-lg leading-relaxed">
+            O que separa quem tem autoridade reconhecida de quem apenas posta conteúdo <span class="text-empire-text">não é mais volume</span>. É <span class="text-empire-gold">identidade, coerência e critério</span>.
+          </p>
+        </div>
+      </div>
+
+      <!-- Pain Points Cards -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
+        <!-- Card 1 -->
+        <div class="card-hover bg-empire-card p-8 border border-empire-border hover:border-empire-gold/30">
+          <div class="w-12 h-12 rounded-lg bg-empire-gold/10 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-empire-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-medium mb-3">Você tem alcance, mas não tem reconhecimento</h3>
+          <p class="text-empire-muted mb-4">Sua presença existe — por tráfego ou esforço — mas as pessoas não se conectam com quem você é. Ninguém lembra de você quando precisa do que você oferece.</p>
+          <p class="text-empire-gold text-sm italic">"Alcance não é autoridade. Autoridade é quando seu nome vem à mente automaticamente."</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card-hover bg-empire-card p-8 border border-empire-border hover:border-empire-gold/30">
+          <div class="w-12 h-12 rounded-lg bg-empire-gold/10 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-empire-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-medium mb-3">Seu custo de aquisição de cliente só aumenta</h3>
+          <p class="text-empire-muted mb-4">Quanto mais você gasta em anúncios, menor o retorno. A concorrência em conteúdo orgânico explodiu. Você está pagando caro pelo que antes era gratuito.</p>
+          <p class="text-empire-gold text-sm italic">"Efeito sanfona: mais gasto, mesmo resultado."</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card-hover bg-empire-card p-8 border border-empire-border hover:border-empire-gold/30">
+          <div class="w-12 h-12 rounded-lg bg-empire-gold/10 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-empire-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-medium mb-3">Você não consegue manter consistência</h3>
+          <p class="text-empire-muted mb-4">Uma semana posta três vezes. Na semana seguinte, nenhuma. Quando finalmente retoma, perdeu o fio da meada e precisa começar do zero.</p>
+          <p class="text-empire-gold text-sm italic">"Autoridade não se constrói com janelas de oportunidade. Se constrói com presença constante."</p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card-hover bg-empire-card p-8 border border-empire-border hover:border-empire-gold/30">
+          <div class="w-12 h-12 rounded-lg bg-empire-gold/10 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-empire-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-medium mb-3">Você replica o que vê outros fazendo</h3>
+          <p class="text-empire-muted mb-4">Tenta seguir tendências, copiar formatos, fazer o que "está dando certo". Mas quanto mais copia, menos você parece você.</p>
+          <p class="text-empire-gold text-sm italic">"Conteúdo pode ser replicado. Identidade, coerência e critério não."</p>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card-hover bg-empire-card p-8 border border-empire-border hover:border-empire-gold/30 md:col-span-2 lg:col-span-1">
+          <div class="w-12 h-12 rounded-lg bg-empire-gold/10 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-empire-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-medium mb-3">Você é refém da produção manual</h3>
+          <p class="text-empire-muted mb-4">Se você parar de gravar hoje, sua presença morre em uma semana. Não existe sistema. Não existe equipe treinada. Não existe processo.</p>
+          <p class="text-empire-gold text-sm italic">"Autoridade que depende de você não é um ativo. É um apagão esperando para acontecer."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution Section -->
+  <section id="solucao" class="py-24 md:py-32 bg-empire-surface">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="fade-in-up">
+          <p class="text-empire-gold text-sm tracking-widest uppercase mb-4">A Solução</p>
+          <h2 class="font-display text-3xl md:text-4xl lg:text-5xl mb-8">
+            A Empire vem transformando líderes em <span class="text-gold-gradient">referências</span>
+          </h2>
+          <div class="space-y-6 text-empire-muted">
+            <p class="text-lg">
+              A Empire vem ajudando diversos CEOs, especialistas e donos de média empresa a transformar suas marcas pessoais e institucionais em <span class="text-empire-text">ativos de autoridade</span>, através de um sistema de 24 semanas estruturado em 5 fases.
+            </p>
+            <p class="text-lg">
+              Este programa <span class="text-empire-gold">não é sobre postar mais</span>. É sobre construir um sistema de comunicação e autoridade que funciona sem sua presença constante.
+            </p>
+            <div class="grid grid-cols-2 gap-4 pt-6">
+              <div class="flex items-center gap-3">
+                <div class="w-2 h-2 bg-empire-gold rounded-full"></div>
+                <span class="text-empire-text">Escala sem perder identidade</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-2 h-2 bg-empire-gold rounded-full"></div>
+                <span class="text-empire-text">Gera demanda previsível</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-2 h-2 bg-empire-gold rounded-full"></div>
+                <span class="text-empire-text">Delegável para equipe</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-2 h-2 bg-empire-gold rounded-full"></div>
+                <span class="text-empire-text">Independente de você</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <img src="images/authority-illustration.png" alt="Sistema de Autoridade" class="w-full h-auto rounded-lg shadow-2xl">
+          <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-empire-gold/10 rounded-lg -z-10"></div>
+          <div class="absolute -top-6 -left-6 w-24 h-24 border border-empire-gold/30 rounded-lg -z-10"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="py-24 md:py-32">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16 fade-in-up">
+        <p class="text-empire-gold text-sm tracking-widest uppercase mb-4">Os Benefícios</p>
+        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl">
+          Benefícios de um <span class="text-gold-gradient">Ativo de Autoridade</span> Estruturado
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-children">
+        <!-- Benefit 1 -->
+        <div class="shine-effect bg-empire-card p-8 border border-empire-border relative overflow-hidden group">
+          <div class="w-14 h-14 rounded-lg bg-empire-gold/10 flex items-center justify-center mb-6 group-hover:bg-empire-gold/20 transition-colors">
+            <svg class="w-7 h-7 text-empire-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-medium mb-3">Equilíbrio Entre Presença e Vida</h3>
+          <p class="text-empire-muted">Um sistema que gera autoridade mesmo quando você não está online. Presença constante sem refém do celular.</p>
+        </div>
+
+        <!-- Benefit 2 -->
+        <div class="shine-effect bg-empire-card p-8 border border-empire-border relative overflow-hidden group">
+          <div class="w-14 h-14 rounded-lg bg-empire-gold/10 flex items-center justify-center mb-6 group-hover:bg-empire-gold/20 transition-colors">
+            <svg class="w-7 h-7 text-empire-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-medium mb-3">Demanda Previsível</h3>
+          <p class="text-empire-muted">Quando você tem autoridade reconhecível, clientes vêm até você. Não é mais caça. É atração.</p>
+        </div>
+
+        <!-- Benefit 3 -->
+        <div class="shine-effect bg-empire-card p-8 border border-empire-border relative overflow-hidden group">
+          <div class="w-14 h-14 rounded-lg bg-empire-gold/10 flex items-center justify-center mb-6 group-hover:bg-empire-gold/20 transition-colors">
+            <svg class="w-7 h-7 text-empire-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-medium mb-3">Escalabilidade Real</h3>
+          <p class="text-empire-muted">Processos definidos, equipe treinada, sistema documentado. Duplicar resultado sem duplicar esforço.</p>
+        </div>
+
+        <!-- Benefit 4 -->
+        <div class="shine-effect bg-empire-card p-8 border border-empire-border relative overflow-hidden group">
+          <div class="w-14 h-14 rounded-lg bg-empire-gold/10 flex items-center justify-center mb-6 group-hover:bg-empire-gold/20 transition-colors">
+            <svg class="w-7 h-7 text-empire-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-medium mb-3">Posicionamento Diferenciado</h3>
+          <p class="text-empire-muted">Uma tese central que só você defende. Um arquétipo que só você ocupa. Um discurso que só você faz.</p>
+        </div>
+
+        <!-- Benefit 5 -->
+        <div class="shine-effect bg-empire-card p-8 border border-empire-border relative overflow-hidden group">
+          <div class="w-14 h-14 rounded-lg bg-empire-gold/10 flex items-center justify-center mb-6 group-hover:bg-empire-gold/20 transition-colors">
+            <svg class="w-7 h-7 text-empire-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-medium mb-3">Independência do Fundador</h3>
+          <p class="text-empire-muted">Sua autoridade deixa de depender exclusivamente de você. O sistema sustenta a presença.</p>
+        </div>
+
+        <!-- Benefit 6 -->
+        <div class="shine-effect bg-empire-card p-8 border border-empire-border relative overflow-hidden group">
+          <div class="w-14 h-14 rounded-lg bg-empire-gold/10 flex items-center justify-center mb-6 group-hover:bg-empire-gold/20 transition-colors">
+            <svg class="w-7 h-7 text-empire-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-medium mb-3">Ativo de Longo Prazo</h3>
+          <p class="text-empire-muted">Não é campanha. Não é hype. É um ativo de comunicação que cresce em valor com o tempo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Methodology Section -->
+  <section id="metodologia" class="py-24 md:py-32 bg-empire-surface">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16 fade-in-up">
+        <p class="text-empire-gold text-sm tracking-widest uppercase mb-4">A Metodologia</p>
+        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl mb-6">
+          Como Funciona o <span class="text-gold-gradient">Acelerador de Audiência</span>
+        </h2>
+        <p class="text-empire-muted text-lg max-w-3xl mx-auto">
+          Um sistema de 24 semanas que começa com um diagnóstico profundo do seu ativo de comunicação atual, e é construído fase a fase.
+        </p>
+      </div>
+
+      <!-- Timeline -->
+      <div class="relative">
+        <!-- Phase 1 -->
+        <div class="flex flex-col lg:flex-row gap-8 mb-12 fade-in-up">
+          <div class="lg:w-1/3">
+            <div class="flex items-center gap-4 mb-4">
+              <span class="text-5xl font-display text-gold-gradient">01</span>
+              <div>
+                <p class="text-empire-gold text-sm tracking-widest uppercase">Semana 1</p>
+                <h3 class="text-xl font-medium">Diagnóstico de Ativo</h3>
+              </div>
+            </div>
+          </div>
+          <div class="lg:w-2/3 bg-empire-card p-8 border border-empire-border">
+            <p class="text-empire-muted mb-4">Análise completa do seu posicionamento atual</p>
+            <ul class="space-y-2 text-empire-muted">
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-empire-gold rounded-full"></span>
+                Análise do ativo de comunicação atual (volume, frequência, consistência)
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-empire-gold rounded-full"></span>
+                Diagnóstico de identidade (tese central, posicionamento, arquétipo)
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-empire-gold rounded-full"></span>
+                Avaliação de riscos (reputação, dependência de formatos, fragilidade)
+              </li>
+            </ul>
+            <div class="mt-6 pt-6 border-t border-empire-border">
+              <p class="text-empire-gold text-sm"><strong>Output:</strong> Mapa de Risco e Alavancas de Autoridade</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 2 -->
+        <div class="flex flex-col lg:flex-row gap-8 mb-12 fade-in-up">
+          <div class="lg:w-1/3">
+            <div class="flex items-center gap-4 mb-4">
+              <span class="text-5xl font-display text-gold-gradient">02</span>
+              <div>
+                <p class="text-empire-gold text-sm tracking-widest uppercase">Semana 2</p>
+                <h3 class="text-xl font-medium">Arquitetura de Marca</h3>
+              </div>
+            </div>
+          </div>
+          <div class="lg:w-2/3 bg-empire-card p-8 border border-empire-border">
+            <p class="text-empire-muted mb-4">Construção da fundação estratégica da sua marca</p>
+            <ul class="space-y-2 text-empire-muted">
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-empire-gold rounded-full"></span>
+                Posicionamento estratégico poderoso
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-empire-gold rounded-full"></span>
+                Arquétipo do personagem público
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-empire-gold rounded-full"></span>
+                Tese central da marca
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-empire-gold rounded-full"></span>
+                Diretrizes de identidade visual
+              </li>
+            </ul>
+            <div class="mt-6 pt-6 border-t border-empire-border">
+              <p class="text-empire-gold text-sm"><strong>Output:</strong> BrandBook Estratégico</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 3 -->
+        <div class="flex flex-col lg:flex-row gap-8 mb-12 fade-in-up">
+          <div class="lg:w-1/3">
+            <div class="flex items-center gap-4 mb-4">
+              <span class="text-5xl font-display text-gold-gradient">03</span>
+              <div>
+                <p class="text-empire-gold text-sm tracking-widest uppercase">Semanas 3-4</p>
+                <h3 class="text-xl font-medium">Sistema de Escala</h3>
+              </div>
+            </div>
+          </div>
+          <div class="lg:w-2/3 bg-empire-card p-8 border border-empire-border">
+            <p class="text-empire-muted mb-4">Transformação da marca em sistema replicável</p>
+            <ul class="space-y-2 text-empire-muted">
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-empire-gold rounded-full"></span>
+                Linha editorial baseada em continuidade e tese
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-empire-gold rounded-full"></span>
+                Mapa de criação, produção e distribuição
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-empire-gold rounded-full"></span>
+                Microprogramas de conteúdo (quadros recorrentes e escaláveis)
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-empire-gold rounded-full"></span>
+                Manual de implementação e governança
+              </li>
+            </ul>
+            <div class="mt-6 pt-6 border-t border-empire-border">
+              <p class="text-empire-gold text-sm"><strong>Output:</strong> Mapa de Escala de Conteúdo</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 4 -->
+        <div class="flex flex-col lg:flex-row gap-8 mb-12 fade-in-up">
+          <div class="lg:w-1/3">
+            <div class="flex items-center gap-4 mb-4">
+              <span class="text-5xl font-display text-gold-gradient">04</span>
+              <div>
+                <p class="text-empire-gold text-sm tracking-widest uppercase">Semanas 5-12</p>
+                <h3 class="text-xl font-medium">Rampagem Guiada</h3>
+              </div>
+            </div>
+          </div>
+          <div class="lg:w-2/3 bg-empire-card p-8 border border-empire-border">
+            <p class="text-empire-muted mb-4">Aceleração da adoção do sistema</p>
+            <ul class="space-y-2 text-empire-muted">
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-empire-gold rounded-full"></span>
+                1 call semanal (60-90 min) de treinamento e revisão
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-empire-gold rounded-full"></span>
+                Produção orientada de roteiros-modelo
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-empire-gold rounded-full"></span>
+                Cocriação supervisionada de conteúdo
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-empire-gold rounded-full"></span>
+                Correção de direcionamento e ajustes de discurso
+              </li>
+            </ul>
+            <div class="mt-6 pt-6 border-t border-empire-border">
+              <p class="text-empire-gold text-sm"><strong>Foco:</strong> Acelerar curva de aprendizado e estabelecer ritmo</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 5 -->
+        <div class="flex flex-col lg:flex-row gap-8 fade-in-up">
+          <div class="lg:w-1/3">
+            <div class="flex items-center gap-4 mb-4">
+              <span class="text-5xl font-display text-gold-gradient">05</span>
+              <div>
+                <p class="text-empire-gold text-sm tracking-widest uppercase">Semanas 13-24</p>
+                <h3 class="text-xl font-medium">Governança</h3>
+              </div>
+            </div>
+          </div>
+          <div class="lg:w-2/3 bg-empire-card p-8 border border-empire-border">
+            <p class="text-empire-muted mb-4">Consistência e refinamento contínuo</p>
+            <ul class="space-y-2 text-empire-muted">
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-empire-gold rounded-full"></span>
+                1 call semanal (60-90 min) de revisão estratégica
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-empire-gold rounded-full"></span>
+                Ajuste de discurso ao longo do tempo
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-empire-gold rounded-full"></span>
+                Treinamento e tomada de decisão
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-empire-gold rounded-full"></span>
+                Redução de riscos reputacionais
+              </li>
+            </ul>
+            <div class="mt-6 pt-6 border-t border-empire-border">
+              <p class="text-empire-gold text-sm"><strong>Foco:</strong> Garantir coerência, manutenção de tese e evolução sem perda de identidade</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What You Get Section -->
+  <section class="py-24 md:py-32">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="order-2 lg:order-1">
+          <img src="images/content-system.png" alt="Sistema de Conteúdo" class="w-full h-auto rounded-lg shadow-2xl">
+        </div>
+        <div class="order-1 lg:order-2 fade-in-up">
+          <p class="text-empire-gold text-sm tracking-widest uppercase mb-4">O Que Você Vai Obter</p>
+          <h2 class="font-display text-3xl md:text-4xl mb-8">
+            Resultados Concretos do <span class="text-gold-gradient">Acelerador</span>
+          </h2>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-empire-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-empire-muted">Como estruturar um posicionamento que te torna a <span class="text-empire-text">única opção</span> no seu mercado</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-empire-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-empire-muted">Como construir uma <span class="text-empire-text">tese central</span> que só você defende — e que atrai as pessoas certas</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-empire-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-empire-muted">Como criar <span class="text-empire-text">microprogramas de conteúdo</span> que escalam sem você gravar todo dia</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-empire-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-empire-muted">Como <span class="text-empire-text">treinar sua equipe</span> para operar o sistema com autonomia</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-empire-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-empire-muted">Quais <span class="text-empire-text">indicadores observar</span> para garantir consistência sem perder qualidade</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-empire-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-empire-muted">Como manter <span class="text-empire-text">coerência de discurso</span> ao longo do tempo, mesmo com tendências mudando</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-empire-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-empire-muted">Como transformar sua presença online em um <span class="text-empire-text">ativo que valoriza com o tempo</span></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scarcity Section -->
+  <section class="py-24 md:py-32 bg-empire-surface relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-empire-gold/5 to-transparent"></div>
+    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center relative">
+      <div class="fade-in-up">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-empire-gold/30 bg-empire-gold/5 mb-8">
+          <svg class="w-4 h-4 text-empire-gold" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+          </svg>
+          <span class="text-empire-gold text-sm tracking-widest uppercase">Vagas Limitadas</span>
+        </div>
+
+        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl mb-8">
+          Vagas Limitadas para <span class="text-gold-gradient">Cada Ciclo</span>
+        </h2>
+
+        <div class="text-empire-muted text-lg space-y-4 max-w-2xl mx-auto">
+          <p>O Acelerador de Audiência tem vagas limitadas para cada ciclo.</p>
+          <p>São <span class="text-empire-text">24 semanas de acompanhamento estratégico</span> para construir seu sistema de autoridade.</p>
+          <p>Este não é um programa para "postar mais". É um programa para construir um <span class="text-empire-gold">ativo de autoridade</span> que sustente crescimento, reputação e valor no longo prazo.</p>
+        </div>
+
+        <div class="mt-12 p-8 border-gold-gradient bg-empire-card/50">
+          <p class="font-display text-2xl text-empire-text mb-2">Conteúdo pode ser replicado.</p>
+          <p class="text-empire-gold text-xl">Identidade, coerência e critério não.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="sobre" class="py-24 md:py-32">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16 fade-in-up">
+        <p class="text-empire-gold text-sm tracking-widest uppercase mb-4">Sobre Nós</p>
+        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl mb-6">
+          Sobre a <span class="text-gold-gradient">Empire</span>
+        </h2>
+        <p class="text-empire-muted text-lg max-w-3xl mx-auto">
+          A Empire é uma consultoria especializada em autoridade, conteúdo e escala de presença digital, que auxilia CEOs, especialistas e donos de média empresa a transformar suas marcas em ativos de comunicação de longo prazo.
+        </p>
+      </div>
+
+      <!-- Founders -->
+      <div class="grid md:grid-cols-3 gap-8 mb-16 stagger-children">
+        <div class="founder-card bg-empire-card p-6 border border-empire-border text-center group">
+          <div class="relative w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-2 border-empire-gold/30">
+            <img src="images/founders/sandro_erfil.jpeg" alt="Sandro San" class="founder-img w-full h-full object-cover">
+          </div>
+          <h3 class="text-xl font-medium mb-1">Sandro San</h3>
+          <p class="text-empire-gold text-sm mb-3">Co-Founder</p>
+          <p class="text-empire-muted text-sm">Estratégia de autoridade e posicionamento de mercado</p>
+        </div>
+
+        <div class="founder-card bg-empire-card p-6 border border-empire-border text-center group">
+          <div class="relative w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-2 border-empire-gold/30">
+            <img src="images/founders/davi_perfil.jpeg" alt="Davi Louback" class="founder-img w-full h-full object-cover">
+          </div>
+          <h3 class="text-xl font-medium mb-1">Davi Louback</h3>
+          <p class="text-empire-gold text-sm mb-3">Co-Founder</p>
+          <p class="text-empire-muted text-sm">Sistemas de conteúdo e escala de produção</p>
+        </div>
+
+        <div class="founder-card bg-empire-card p-6 border border-empire-border text-center group">
+          <div class="relative w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-2 border-empire-gold/30">
+            <img src="images/founders/pedro_erfil.jpeg" alt="Pedro Paracampos" class="founder-img w-full h-full object-cover">
+          </div>
+          <h3 class="text-xl font-medium mb-1">Pedro Paracampos</h3>
+          <p class="text-empire-gold text-sm mb-3">Co-Founder</p>
+          <p class="text-empire-muted text-sm">Arquitetura de marca e identidade visual</p>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div class="grid md:grid-cols-2 gap-8 fade-in-up">
+        <div class="bg-empire-card p-8 border border-empire-border">
+          <h3 class="text-xl font-medium mb-6">O que já ajudamos nossos clientes a alcançar:</h3>
+          <ul class="space-y-4 text-empire-muted">
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-empire-gold" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              Se tornarem referências reconhecidas em seus mercados
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-empire-gold" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              Alcançar quase 30 milhões de pessoas em um único mês
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-empire-gold" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              Multiplicar seu share of voice e presença digital
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-5 h-5 text-empire-gold" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              Bater recorde de vendas em meses historicamente fracos
+            </li>
+          </ul>
+        </div>
+        <div class="bg-gradient-to-br from-empire-gold/10 to-empire-gold/5 p-8 border border-empire-gold/30 flex items-center justify-center">
+          <div class="text-center">
+            <p class="text-empire-gold text-sm tracking-widest uppercase mb-4">Nosso Foco</p>
+            <p class="font-display text-3xl md:text-4xl text-empire-text mb-4">Não é volume.</p>
+            <p class="font-display text-3xl md:text-4xl text-gold-gradient">É lastro, confiança e previsibilidade.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-24 md:py-32 bg-empire-surface">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16 fade-in-up">
+        <p class="text-empire-gold text-sm tracking-widest uppercase mb-4">Dúvidas</p>
+        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl">
+          Perguntas <span class="text-gold-gradient">Frequentes</span>
+        </h2>
+      </div>
+
+      <div class="space-y-4 fade-in-up">
+        <!-- FAQ Item 1 -->
+        <div class="faq-item border-empire-border">
+          <div class="faq-question flex items-center justify-between py-6" onclick="toggleFaq(this)">
+            <h3 class="text-lg font-medium pr-4">Para quem é o Acelerador de Audiência?</h3>
+            <span class="faq-icon text-empire-gold text-2xl flex-shrink-0">+</span>
+          </div>
+          <div class="faq-answer text-empire-muted">
+            <p>O programa foi desenhado para CEOs, especialistas e donos de média empresa que já compreenderam que conteúdo não é mais o problema. O foco é quem quer escalar presença, autoridade e consistência sem perder identidade. Não serve para quem está começando do zero ou busca atalhos sem estratégia.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="faq-item border-empire-border">
+          <div class="faq-question flex items-center justify-between py-6" onclick="toggleFaq(this)">
+            <h3 class="text-lg font-medium pr-4">Quanto tempo preciso dedicar por semana?</h3>
+            <span class="faq-icon text-empire-gold text-2xl flex-shrink-0">+</span>
+          </div>
+          <div class="faq-answer text-empire-muted">
+            <p>Durante as 24 semanas, você terá 1 call semanal de 60-90 minutos com seu estrategista. Além disso, espera-se que você dedique tempo para aplicação do sistema — seja produzindo ou coordenando sua equipe. O programa foi feito para pessoas que já têm negócios rodando.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="faq-item border-empire-border">
+          <div class="faq-question flex items-center justify-between py-6" onclick="toggleFaq(this)">
+            <h3 class="text-lg font-medium pr-4">Quem vai me atender?</h3>
+            <span class="faq-icon text-empire-gold text-2xl flex-shrink-0">+</span>
+          </div>
+          <div class="faq-answer text-empire-muted">
+            <p>Você será acompanhado por estrategistas da Empire com experiência em construir sistemas de autoridade para líderes de mercado. O atendimento é personalizado — não é curso gravado ou mentoria em grupo.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="faq-item border-empire-border">
+          <div class="faq-question flex items-center justify-between py-6" onclick="toggleFaq(this)">
+            <h3 class="text-lg font-medium pr-4">Posso envolver minha equipe?</h3>
+            <span class="faq-icon text-empire-gold text-2xl flex-shrink-0">+</span>
+          </div>
+          <div class="faq-answer text-empire-muted">
+            <p>Sim. Na verdade, isso é recomendado. O programa inclui treinamento para que sua equipe opere o sistema com autonomia. O objetivo é construir independência, não dependência.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div class="faq-item border-empire-border">
+          <div class="faq-question flex items-center justify-between py-6" onclick="toggleFaq(this)">
+            <h3 class="text-lg font-medium pr-4">E se eu não tiver tempo para produzir conteúdo?</h3>
+            <span class="faq-icon text-empire-gold text-2xl flex-shrink-0">+</span>
+          </div>
+          <div class="faq-answer text-empire-muted">
+            <p>O sistema é desenhado justamente para isso. Você define a estratégia, aprova o direcionamento, e sua equipe executa. O foco é transformar sua presença em um ativo que funciona sem você 100% do tempo.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 6 -->
+        <div class="faq-item border-empire-border">
+          <div class="faq-question flex items-center justify-between py-6" onclick="toggleFaq(this)">
+            <h3 class="text-lg font-medium pr-4">Qual a diferença do Acelerador para uma agência de conteúdo?</h3>
+            <span class="faq-icon text-empire-gold text-2xl flex-shrink-0">+</span>
+          </div>
+          <div class="faq-answer text-empire-muted">
+            <p>Agências geralmente focam em execução e volume. O Acelerador foca em arquitetura de marca, sistema de escala e governança. O objetivo não é postar mais — é construir um ativo que valoriza com o tempo. Ao final do programa, você tem autonomia, não dependência.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section id="cta" class="py-24 md:py-32 relative overflow-hidden">
+    <div class="hero-bg opacity-20"></div>
+    <div class="grid-pattern absolute inset-0 opacity-30"></div>
+
+    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center relative">
+      <div class="fade-in-up">
+        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl mb-8">
+          Pronto para Construir seu <span class="text-gold-gradient">Ativo de Autoridade</span>?
+        </h2>
+
+        <p class="text-empire-muted text-lg mb-12 max-w-2xl mx-auto">
+          Clique no botão abaixo para iniciar sua aplicação. Vagas limitadas para cada ciclo.
+        </p>
+
+        <div class="inline-block pulse-ring">
+          <a href="#" class="btn-premium inline-flex items-center gap-3 text-lg tracking-wide">
+            QUERO SER REFERÊNCIA NO MEU MERCADO
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+
+        <p class="mt-8 text-empire-muted text-sm">
+          <svg class="w-4 h-4 inline-block mr-1 text-empire-gold" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+          </svg>
+          Resposta em até 48h úteis
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 bg-empire-bg border-t border-empire-border">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-4">
+          <img src="images/logos/Logo Empire.png" alt="Empire" class="h-8 w-auto">
+        </div>
+
+        <div class="flex items-center gap-6 text-empire-muted text-sm">
+          <a href="#" class="hover:text-empire-gold transition-colors">Política de Privacidade</a>
+          <span class="text-empire-border">|</span>
+          <a href="#" class="hover:text-empire-gold transition-colors">Termos de Uso</a>
+          <span class="text-empire-border">|</span>
+          <a href="#" class="hover:text-empire-gold transition-colors">Contato</a>
+        </div>
+
+        <p class="text-empire-muted text-sm">
+          © 2025 Empire. Todos os direitos reservados.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const closeMenuBtn = document.getElementById('close-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.add('active');
+    });
+
+    closeMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+    });
+
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+      });
+    });
+
+    // FAQ toggle
+    function toggleFaq(element) {
+      const faqItem = element.parentElement;
+      const isActive = faqItem.classList.contains('active');
+
+      // Close all FAQ items
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+      });
+
+      // Open clicked item if it wasn't active
+      if (!isActive) {
+        faqItem.classList.add('active');
+      }
+    }
+
+    // Scroll reveal animation
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all fade-in elements
+    document.querySelectorAll('.fade-in-up, .stagger-children').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const headerOffset = 80;
+          const elementPosition = target.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Navbar background on scroll
+    const navbar = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('bg-empire-bg/95');
+      } else {
+        navbar.classList.remove('bg-empire-bg/95');
+      }
+    });
+
+    // Counter animation (if needed for stats)
+    function animateCounter(element, target, duration = 2000) {
+      let start = 0;
+      const increment = target / (duration / 16);
+
+      function updateCounter() {
+        start += increment;
+        if (start < target) {
+          element.textContent = Math.floor(start).toLocaleString();
+          requestAnimationFrame(updateCounter);
+        } else {
+          element.textContent = target.toLocaleString();
+        }
+      }
+
+      updateCounter();
+    }
+  </script>
+</body>
+</html>
