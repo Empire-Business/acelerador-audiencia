@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WPGPLJSL');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O Mapa Invisível — 47 Armadilhas Que Matam Sua Autoridade Digital</title>
+  <meta name="description" content="Descubra as 47 armadilhas invisíveis que estão sabotando sua autoridade digital. Material gratuito do Acelerador de Audiência.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            empire: {
+              bg: '#0a0a0b',
+              surface: '#111113',
+              card: '#18181b',
+              border: '#27272a',
+              muted: '#71717a',
+              text: '#fafafa',
+              gold: '#c9a962',
+              goldLight: '#e4d4a5',
+              goldDark: '#9a7b3c',
+            }
+          },
+          fontFamily: {
+            display: ['Cormorant Garamond', 'serif'],
+            body: ['DM Sans', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --gold-gradient: linear-gradient(135deg, #c9a962 0%, #e4d4a5 50%, #c9a962 100%);
+      --gold-text: #c9a962;
+    }
+
+    * {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: #0a0a0b;
+      color: #fafafa;
+    }
+
+    .font-display {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .text-gold-gradient {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .border-gold-gradient {
+      border: 1px solid transparent;
+      background: linear-gradient(#18181b, #18181b) padding-box,
+                  linear-gradient(135deg, #c9a962, #e4d4a5, #c9a962) border-box;
+    }
+
+    .btn-premium {
+      background: var(--gold-gradient);
+      color: #0a0a0b;
+      font-weight: 600;
+      padding: 1rem 2rem;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-premium:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 40px rgba(201, 169, 98, 0.3);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid #c9a962;
+      color: #c9a962;
+      padding: 0.875rem 1.75rem;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(201, 169, 98, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/hero-bg.webp');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.3;
+      z-index: 0;
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(10,10,11,0.5) 0%, rgba(10,10,11,0.95) 80%, rgba(10,10,11,1) 100%);
+    }
+
+    .grid-pattern {
+      background-image:
+        linear-gradient(rgba(201, 169, 98, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201, 169, 98, 0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card-hover {
+      transition: all 0.4s ease;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.3);
+    }
+
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(201, 169, 98, 0.3), transparent);
+    }
+
+    .trap-card {
+      transition: all 0.3s ease;
+    }
+
+    .trap-card:hover {
+      border-color: rgba(201, 169, 98, 0.4);
+      background: linear-gradient(180deg, rgba(201, 169, 98, 0.05) 0%, transparent 100%);
+    }
+
+    .trap-number {
+      font-family: 'Cormorant Garamond', serif;
+      -webkit-text-stroke: 1px rgba(201, 169, 98, 0.3);
+    }
+
+    .content-accordion {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+
+    .content-accordion.open {
+      max-height: 2000px;
+    }
+
+    .rotate-icon {
+      transition: transform 0.3s ease;
+    }
+
+    .rotate-icon.open {
+      transform: rotate(180deg);
+    }
+
+    .mobile-menu {
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .mobile-menu.active {
+      transform: translateX(0);
+    }
+
+    .pulse-gold {
+      animation: pulseGold 2s infinite;
+    }
+
+    @keyframes pulseGold {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(201, 169, 98, 0.4); }
+      50% { box-shadow: 0 0 20px 10px rgba(201, 169, 98, 0.1); }
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #0a0a0b;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #27272a;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #c9a962;
+    }
+  </style>
+</head>
+<body class="bg-empire-bg text-empire-text antialiased">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WPGPLJSL"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-empire-bg/90 backdrop-blur-md border-b border-empire-border">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center">
+          <img src="images/logos/Logotipo 04.png" alt="Acelerador de Audiência" class="h-8 md:h-10 w-auto">
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
+          <a href="index.html#problema" class="text-empire-muted hover:text-empire-gold transition-colors text-sm tracking-wide">O Problema</a>
+          <a href="index.html#solucao" class="text-empire-muted hover:text-empire-gold transition-colors text-sm tracking-wide">A Solução</a>
+          <a href="#cta" class="btn-secondary text-sm tracking-wide px-4 py-2">BAIXAR MATERIAL</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden text-empire-text p-2">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu fixed inset-y-0 right-0 w-72 bg-empire-surface border-l border-empire-border md:hidden">
+      <div class="p-6">
+        <button id="close-menu-btn" class="absolute top-6 right-6 text-empire-muted">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+        <div class="mt-12 flex flex-col space-y-4">
+          <a href="index.html#problema" class="text-empire-text hover:text-empire-gold transition-colors">O Problema</a>
+          <a href="index.html#solucao" class="text-empire-text hover:text-empire-gold transition-colors">A Solução</a>
+          <a href="#cta" class="btn-premium text-center text-sm mt-4">BAIXAR MATERIAL</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+    <div class="hero-bg"></div>
+    <div class="grid-pattern absolute inset-0 z-10"></div>
+
+    <div class="relative z-20 max-w-5xl mx-auto px-4 md:px-6 lg:px-8 py-24 md:py-32 text-center">
+      <div class="fade-in-up">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-empire-gold/30 bg-empire-gold/5 mb-6 md:mb-8">
+          <span class="w-1.5 h-1.5 bg-empire-gold rounded-full pulse-gold"></span>
+          <span class="text-empire-gold text-xs md:text-sm tracking-widest uppercase">Material Gratuito</span>
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight mb-4 md:mb-6 leading-tight">
+          <span class="text-gold-gradient">O Mapa</span> Invisível
+        </h1>
+
+        <p class="text-xl md:text-2xl lg:text-3xl font-display text-empire-text mb-6 md:mb-8">
+          47 Armadilhas Que Matam Sua Autoridade Digital
+        </p>
+
+        <!-- Subheadline -->
+        <p class="text-base md:text-lg text-empire-muted max-w-2xl mx-auto mb-8 md:mb-10 leading-relaxed">
+          Você tem autoridade e resultado Mas no digital... parece no mundo real. que não existe. Descubra o que está sabotando sua presença — e como sair dessas armadilhas.
+        </p>
+
+        <!-- CTA -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="#cta" class="btn-premium text-base md:text-lg px-6 md:px-8 py-3 md:py-4 w-full sm:w-auto">
+            QUERO DESCOBRIR AS ARMADILHAS
+          </a>
+          <a href="#armadilhas" class="btn-secondary text-sm px-6 py-3 w-full sm:w-auto">
+            VER LISTA COMPLETA
+          </a>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="mt-12 md:mt-16">
+          <p class="text-empire-muted text-xs md:text-sm mb-3">Continue lendo</p>
+          <div class="animate-bounce">
+            <svg class="w-5 h-5 text-empire-gold mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Introduction Section -->
+  <section class="py-16 md:py-24 bg-empire-surface">
+    <div class="max-w-4xl mx-auto px-4 md:px-6 lg:px-8">
+      <div class="fade-in-up">
+        <div class="text-center mb-10 md:mb-14">
+          <p class="text-empire-gold text-sm tracking-widest uppercase mb-4">A Verdade</p>
+          <h2 class="font-display text-2xl md:text-3xl lg:text-4xl leading-tight text-empire-text">
+            Se você está lendo este material, provavelmente já sentiu isso:
+          </h2>
+        </div>
+
+        <div class="bg-empire-card border border-empire-border p-6 md:p-10 rounded-lg">
+          <p class="text-lg md:text-xl text-empire-text mb-6 leading-relaxed">
+            <span class="text-gold-gradient font-semibold">Você tem autoridade e resultado no mundo real.</span> Mas no digital... parece que não existe.
+          </p>
+          <p class="text-empire-muted leading-relaxed mb-6">
+            Não é falta de conhecimento. Não é falta de esforço. Não é falta de "bom conteúdo".
+          </p>
+          <p class="text-empire-muted leading-relaxed mb-6">
+            É algo mais sutil. São escolhas que você faz sem perceber. Pequenas decisões que, acumuladas, criam um abismo entre quem você é no mundo real e como você aparece no digital.
+          </p>
+          <p class="text-empire-gold italic text-base md:text-lg">
+            Este material não vai te acusar. Nós já caímos em todas essas armadilhas também.
+          </p>
+        </div>
+
+        <p class="text-center text-empire-muted mt-8 text-lg md:text-xl">
+          Vai apenas te mostrar o mapa invisível — <span class="text-empire-text">aquele que ninguém te entregou</span>, mas que faz TODA a diferença entre quem cresce no digital e quem fica parado no mesmo lugar.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Traps Section - Mentalidade -->
+  <section id="armadilhas" class="py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-12 md:mb-16 fade-in-up">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-empire-gold/30 bg-empire-gold/5 mb-4">
+          <span class="text-empire-gold text-xs md:text-sm tracking-widest uppercase">Parte 1</span>
+        </div>
+        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl mb-4">
+          As <span class="text-gold-gradient">15 Armadilhas</span> da Mentalidade
+        </h2>
+        <p class="text-empire-muted max-w-2xl mx-auto">
+          As crenças e mentalidades que estão sabotando sua autoridade — mesmo com as melhores intenções.
+        </p>
+      </div>
+
+      <!-- Traps Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        <!-- Trap 1 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">01</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Eu preciso de mais um curso antes de começar"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            O conhecimento sem aplicação é apenas informação. Cada curso que você faz sem botar a mão na massa é tempo que você não está construindo sua presença digital.
+          </p>
+        </div>
+
+        <!-- Trap 2 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">02</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Meu conteúdo precisa ser perfeito para publicar"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Perfeccionismo é medo fantasiado de profissionalismo. Enquanto você pole um conteúdo, seu concorrente publicou dez.
+          </p>
+        </div>
+
+        <!-- Trap 3 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">03</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Vou esperar ter mais seguidores para vender"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Você JÁ TEM autoridade no mundo real. O digital é apenas um canal para amplificar isso. Não é o seguidor que valida você. É você que valida o seguidor.
+          </p>
+        </div>
+
+        <!-- Trap 4 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">04</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Preciso viralizar para ter resultado"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Em 2026, o Instagram mudou. RETENÇÃO vale mais que ALCANCE. 10 mil pessoas vendo até o fim vale MAIS que 100 mil passando rapidinho. Viralizou não é estratégia.
+          </p>
+        </div>
+
+        <!-- Trap 5 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">05</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Vou copiar o que funciona para os outros"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            O que funciona para outro funciona PARA OUTRO. Copiar formato sem entender PRINCÍPIO é receita para ser cópia barata de alguém que já existe.
+          </p>
+        </div>
+
+        <!-- Trap 6 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">06</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Tenho que estar em todas as redes sociais"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Quem tenta falar para todo mundo acaba não sendo ouvido por ninguém. Um canal dominado vale mais que cinco negligenciados.
+          </p>
+        </div>
+
+        <!-- Trap 7 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">07</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"O digital é algo a mais, vou fazer quando sobrar tempo"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            O digital não é "algo a mais" — é um trabalho a mais. E como todo trabalho, precisa de tempo dedicado, não tempo que sobra.
+          </p>
+        </div>
+
+        <!-- Trap 8 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">08</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Meu problema é o algoritmo"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            O algoritmo não é seu inimigo. Ele é um espelho. Se seu conteúdo não performa, o problema raramente é o algoritmo.
+          </p>
+        </div>
+
+        <!-- Trap 9 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">09</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Preciso de equipamento melhor para começar"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Equipamento melhora qualidade técnica. Não melhora qualidade de conteúdo. Um conteúdo ruim em 4K continua ruim.
+          </p>
+        </div>
+
+        <!-- Trap 10 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">10</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Vou contratar alguém para fazer isso por mim"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Você pode terceirizar execução, mas não pode terceirizar posicionamento. Se você não sabe quem é digitalmente, ninguém vai saber por você.
+          </p>
+        </div>
+
+        <!-- Trap 11 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">11</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Esse negócio de posicionamento é coisa de guru"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Posicionamento não é tagline. É uma decisão estratégica sobre quem você é, para quem fala, e como é diferente. Empresas de verdade levam isso a sério há décadas.
+          </p>
+        </div>
+
+        <!-- Trap 12 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">12</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Já tentei antes e não funcionou"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Tentar sem método é experimentar, não executar. Se você tentou correr uma maratona sem treinar e não conseguiu, o problema não é a maratona.
+          </p>
+        </div>
+
+        <!-- Trap 13 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">13</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Meu mercado é diferente, isso não se aplica"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Os princípios são universais. O que muda é a aplicação. Médico, corretor, consultor, empresário — todos precisam ser reconhecidos antes de serem contratados.
+          </p>
+        </div>
+
+        <!-- Trap 14 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">14</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Vou esperar o momento certo"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            O momento certo não existe. Ele é criado. Enquanto você espera, outro está construindo.
+          </p>
+        </div>
+
+        <!-- Trap 15 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">15</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Primeiro preciso ter tudo organizado"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Organização infinita é procrastinação disfarçada. Você não precisa de tudo organizado. Precisa começar organizado.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="section-divider max-w-4xl mx-auto"></div>
+
+  <!-- Traps Section - Posicionamento -->
+  <section class="py-16 md:py-24 bg-empire-surface">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-12 md:mb-16 fade-in-up">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-empire-gold/30 bg-empire-gold/5 mb-4">
+          <span class="text-empire-gold text-xs md:text-sm tracking-widest uppercase">Parte 2</span>
+        </div>
+        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl mb-4">
+          As <span class="text-gold-gradient">15 Armadilhas</span> de Posicionamento
+        </h2>
+        <p class="text-empire-muted max-w-2xl mx-auto">
+          Como você se comunica — e por que está sendo ignorado mesmo sendo excelente no que faz.
+        </p>
+      </div>
+
+      <!-- Traps Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        <!-- Trap 16 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">16</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Falo para todo mundo porque todo mundo precisa do que eu ofereço"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Falar de tudo é falar de nada. Quem tenta falar para todo mundo acaba não sendo ouvido por ninguém. Especificidade gera autoridade.
+          </p>
+        </div>
+
+        <!-- Trap 17 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">17</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Meu posicionamento é 'ajudo pessoas a terem sucesso'"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Genericidade é invisibilidade. "Ajudo pessoas" não é posicionamento — é ausência de posicionamento.
+          </p>
+        </div>
+
+        <!-- Trap 18 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">18</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Não quero limitar meu público"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Nichar não limita. Direciona. Quando você fala especificamente para alguém, essa pessoa se identifica profundamente.
+          </p>
+        </div>
+
+        <!-- Trap 19 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">19</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Vou me inspirar nos concorrentes"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Se você é versão de alguém, você é cópia. O objetivo não é ser melhor que a concorrência. É ser DIFERENTE.
+          </p>
+        </div>
+
+        <!-- Trap 20 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">20</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Tenho medo de polarizar e afastar pessoas"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Polarização não afasta as pessoas certas. Afasta as pessoas erradas. Quem tenta agradar todo mundo não é memorável para ninguém.
+          </p>
+        </div>
+
+        <!-- Trap 21 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">21</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Vou falar do que está em alta"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Trends têm prazo de validade. Posicionamento não. Quem constrói em cima de moda, precisa reconstruir toda semana.
+          </p>
+        </div>
+
+        <!-- Trap 22 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">22</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Meu posicionamento é meu produto"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Posicionamento é sobre identidade, não sobre oferta. Quem você é > O que você vende. Pessoas compram de pessoas, não de catálogos.
+          </p>
+        </div>
+
+        <!-- Trap 23 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">23</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Preciso de um slogan matador"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Slogan é comunicação. Posicionamento é estratégia. Frase bonita sem fundamento estratégico é fachada sem alicerces.
+          </p>
+        </div>
+
+        <!-- Trap 24 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">24</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Não sei o que me torna único"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Você tem diferencial. Só não enxergou ainda. Muitas vezes, o que é óbvio para você é extraordinário para os outros.
+          </p>
+        </div>
+
+        <!-- Trap 25 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">25</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Vou deixar o público me dizer quem eu devo ser"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Liderança é guiar, não ser guiado. O público sabe o que quer, mas não necessariamente como chegar lá. É você quem lidera.
+          </p>
+        </div>
+
+        <!-- Trap 26 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">26</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Meu posicionamento é 'profissionalismo e qualidade'"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Profissionalismo e qualidade são PRÉ-REQUISITOS, não diferenciais. Se essas são suas únicas cartas, você não tem cartas.
+          </p>
+        </div>
+
+        <!-- Trap 27 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">27</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Vou mudar de posicionamento até acertar"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Posicionamento não é algo que você testa como roupa. É algo que você CONSTRÓI. Mudar constantemente é nunca construir.
+          </p>
+        </div>
+
+        <!-- Trap 28 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">28</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Não quero ser muito específico para não ficar limitado"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Especificidade é poder. "Especialista em tudo" é "especialista em nada" com outro nome.
+          </p>
+        </div>
+
+        <!-- Trap 29 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">29</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Vou copiar o posicionamento de quem tem resultado"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Posicionamento não é transferível. O que funciona para outro funciona PARA OUTRO. Você precisa do SEU.
+          </p>
+        </div>
+
+        <!-- Trap 30 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">30</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Posicionamento é coisa de marketing, eu só preciso entregar bom resultado"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Bom resultado é o MÍNIMO. Posicionamento é como você comunica esse resultado. No digital, quem não é visto não é lembrado.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="section-divider max-w-4xl mx-auto"></div>
+
+  <!-- Traps Section - Execução -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-12 md:mb-16 fade-in-up">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-empire-gold/30 bg-empire-gold/5 mb-4">
+          <span class="text-empire-gold text-xs md:text-sm tracking-widest uppercase">Parte 3</span>
+        </div>
+        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl mb-4">
+          As <span class="text-gold-gradient">17 Armadilhas</span> de Execução
+        </h2>
+        <p class="text-empire-muted max-w-2xl mx-auto">
+          O que você faz (ou deixa de fazer) todos os dias — e por que não está avançando.
+        </p>
+      </div>
+
+      <!-- Traps Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        <!-- Trap 31 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">31</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Posto quando tenho inspiração"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Inspiração é amadora. Profissional cria com ou sem vontade. Consistência bate inspiração todos os dias.
+          </p>
+        </div>
+
+        <!-- Trap 32 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">32</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Um conteúdo por semana já está bom"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Quantidade gera qualidade. Quem posta pouco aprende pouco, itera pouco, melhora pouco.
+          </p>
+        </div>
+
+        <!-- Trap 33 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">33</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Vou fazer só o que gosto"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Crescimento acontece fora da zona de conforto. Se você só faz o que já sabe, nunca descobre o que poderia aprender.
+          </p>
+        </div>
+
+        <!-- Trap 34 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">34</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Engajamento é respondendo comentários"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Engajamento começa com CONTEÚDO que gera comentários. Resposta é o mínimo. Criação de conversa é o objetivo.
+          </p>
+        </div>
+
+        <!-- Trap 35 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">35</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Não preciso de sistema, é só postar"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Improvisação funciona para uma semana. Sistema funciona para uma carreira. Sem sistema, você depende de energia.
+          </p>
+        </div>
+
+        <!-- Trap 36 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">36</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Vou criar tudo do zero sempre"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Criatividade dentro de estrutura é poderosa. Criatividade sem estrutura é caos. Os melhores têm frameworks, não improvisos.
+          </p>
+        </div>
+
+        <!-- Trap 37 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">37</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"IA vai tirar minha essência"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            IA é acelerador, não substituto. Você continua sendo você. A IA apenas ajuda a estruturar, pesquisar, escalar. Essência é sua.
+          </p>
+        </div>
+
+        <!-- Trap 38 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">38</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Preciso gravar tudo com produção profissional"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Autenticidade vence produção. Em 2026, conteúdo "real" conecta mais que conteúdo "produzido". Câmera do celular resolve.
+          </p>
+        </div>
+
+        <!-- Trap 39 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">39</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Vou fazer quando tiver a ideia perfeita"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Grandes ideias não vêm antes de criar. Vêm ENQUANTO cria. Quem espera a ideia perfeita nunca começa.
+          </p>
+        </div>
+
+        <!-- Trap 40 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">40</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Não analiso métricas, confio no feeling"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Feeling mente. Números não. O que você acha que funciona e o que REALMENTE funciona costumam ser coisas diferentes.
+          </p>
+        </div>
+
+        <!-- Trap 41 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">41</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Vou postar e ver o que acontece"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Postar sem objetivo é gritar no vazio. Cada conteúdo precisa ter um propósito: educar, inspirar, vender, conectar.
+          </p>
+        </div>
+
+        <!-- Trap 42 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">42</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Meu conteúdo é muito complexo para redes sociais"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Complexidade é desafio de comunicação, não de formato. Se você não consegue simplificar, talvez não entenda tão bem quanto pensa.
+          </p>
+        </div>
+
+        <!-- Trap 43 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">43</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Vou fazer igual está dando certo agora"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            O que funciona hoje pode não funcionar amanhã. Trends passam. Princípios ficam. Copiar superfície sem entender fundo é construir em areia.
+          </p>
+        </div>
+
+        <!-- Trap 44 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">44</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Não consigo criar linha editorial, minhas ideias são aleatórias"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Linha editorial não nasce pronta. É construída. Começa com temas centrais e se expande. Ideias aleatórias são sintoma de falta de clareza.
+          </p>
+        </div>
+
+        <!-- Trap 45 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">45</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Preciso de mais tempo para criar bom conteúdo"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Tempo não é o problema. Foco é. Você não precisa de mais tempo. Precisa de tempo MELHOR usado.
+          </p>
+        </div>
+
+        <!-- Trap 46 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">46</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Vou esperar acabar o carnaval / as férias / o mês louco para começar"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Momento tranquilo não existe. Sempre terá algo. Quem espera o momento perfeito perde todos os momentos.
+          </p>
+        </div>
+
+        <!-- Trap 47 -->
+        <div class="trap-card bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="trap-number text-3xl md:text-4xl text-empire-gold/40 font-display">47</span>
+            <h3 class="text-empire-text font-medium text-base md:text-lg pt-1">"Se eu fizesse tudo certo, funcionaria sozinho"</h3>
+          </div>
+          <p class="text-empire-muted text-sm leading-relaxed">
+            Não existe fórmula mágica. Existe método. Existe consistência. Existe paciência. O que funciona para um pode não funcionar para outro.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Way Out Section -->
+  <section class="py-16 md:py-24 bg-empire-surface relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-empire-gold/5 to-transparent"></div>
+
+    <div class="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 relative">
+      <div class="text-center mb-10 md:mb-14 fade-in-up">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-empire-gold/30 bg-empire-gold/5 mb-4">
+          <span class="text-empire-gold text-xs md:text-sm tracking-widest uppercase">O Caminho de Saída</span>
+        </div>
+        <h2 class="font-display text-2xl md:text-3xl lg:text-4xl mb-6">
+          Você Acabou de Ler <span class="text-gold-gradient">47 Armadilhas</span>
+        </h2>
+      </div>
+
+      <div class="bg-empire-card border border-empire-gold/20 p-6 md:p-10 rounded-lg mb-8 md:mb-10">
+        <p class="text-empire-muted text-base md:text-lg leading-relaxed mb-6">
+          Provavelmente se identificou com várias. Talvez com a maioria.
+        </p>
+        <p class="text-empire-text text-base md:text-lg leading-relaxed mb-6">
+          <span class="text-empire-gold font-semibold">Isso não é ruim. É BOM.</span>
+        </p>
+        <p class="text-empire-muted text-base md:text-lg leading-relaxed">
+          Significa que você agora VÊ o que antes era invisível.
+        </p>
+      </div>
+
+      <div class="text-center mb-8">
+        <h3 class="font-display text-xl md:text-2xl text-empire-text mb-4">
+          A pergunta que fica:
+        </h3>
+        <p class="text-empire-gold text-lg md:text-xl font-semibold">
+          Quantos anos você está disposto a gastar cometendo esses erros sozinho?
+        </p>
+      </div>
+
+      <div class="bg-gradient-to-br from-empire-gold/10 to-transparent border border-empire-gold/20 p-6 md:p-10 rounded-lg mb-8 md:mb-10">
+        <p class="text-empire-muted text-base md:text-lg leading-relaxed mb-6">
+          Porque aqui está a verdade que ninguém quer ouvir:
+        </p>
+        <p class="text-empire-text text-lg md:text-xl font-medium italic">
+          "Tentar descobrir sozinho é o jeito mais longo, caro e frustrante de aprender."
+        </p>
+      </div>
+
+      <div class="text-center">
+        <p class="text-empire-muted text-base md:text-lg leading-relaxed mb-8">
+          Todas as pessoas que você admira no digital — que têm clareza de posicionamento, que produzem conteúdo consistente, que convertem seguidores em clientes — TODAS elas tiveram ajuda.
+        </p>
+        <p class="text-empire-muted text-base md:text-lg leading-relaxed mb-10">
+          Não descobriram sozinhas. Tiveram mentores, comunidades, processos, sistemas.
+        </p>
+      </div>
+
+      <!-- Benefits of not being alone -->
+      <div class="grid md:grid-cols-2 gap-4 md:gap-6 mb-10 md:mb-12">
+        <div class="bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="w-10 h-10 rounded-lg bg-empire-gold/10 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-empire-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h4 class="text-empire-text font-medium mb-2">Você economiza anos</h4>
+          <p class="text-empire-muted text-sm">O que levaria 3 anos tentando sozinho pode levar 3 meses com método certo</p>
+        </div>
+
+        <div class="bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="w-10 h-10 rounded-lg bg-empire-gold/10 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-empire-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h4 class="text-empire-text font-medium mb-2">Você evita erros caros</h4>
+          <p class="text-empire-muted text-sm">Erros que outros já cometeram e documentaram</p>
+        </div>
+
+        <div class="bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="w-10 h-10 rounded-lg bg-empire-gold/10 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-empire-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+            </svg>
+          </div>
+          <h4 class="text-empire-text font-medium mb-2">Você tem clareza mais rápido</h4>
+          <p class="text-empire-muted text-sm">Sem meses de "tentativa e erro"</p>
+        </div>
+
+        <div class="bg-empire-card border border-empire-border p-5 md:p-6 rounded-lg">
+          <div class="w-10 h-10 rounded-lg bg-empire-gold/10 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-empire-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h4 class="text-empire-text font-medium mb-2">Você executa com confiança</h4>
+          <p class="text-empire-muted text-sm">Sabendo que está no caminho certo</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="cta" class="py-16 md:py-24 relative overflow-hidden">
+    <div class="hero-bg opacity-15"></div>
+    <div class="grid-pattern absolute inset-0 opacity-20"></div>
+
+    <div class="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 text-center relative">
+      <div class="fade-in-up">
+        <h2 class="font-display text-2xl md:text-3xl lg:text-4xl mb-6">
+          Quer Sair Das Armadilhas De Uma Vez?
+        </h2>
+
+        <p class="text-empire-muted text-base md:text-lg mb-8 max-w-2xl mx-auto">
+          O <span class="text-empire-text">Retiro Anti-Carnaval</span> foi criado justamente para isso. Nos dias 14 a 17 de Fevereiro, vamos trabalhar juntos para transformar essas armadilhas em um plano de ação.
+        </p>
+
+        <!-- Retreat Details -->
+        <div class="bg-empire-card border border-empire-gold/20 p-6 md:p-8 rounded-lg mb-8 max-w-xl mx-auto">
+          <div class="flex items-center justify-center gap-2 mb-4">
+            <svg class="w-5 h-5 text-empire-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            <span class="text-empire-gold font-medium">14 a 17 de Fevereiro, 2026</span>
+          </div>
+
+          <p class="text-empire-text font-display text-lg md:text-xl mb-4">O que você vai receber:</p>
+
+          <ul class="text-left space-y-3 text-empire-muted max-w-md mx-auto">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-empire-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>Definição de posicionamento de uma vez por todas</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-empire-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>Criação do seu Brand Book</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-empire-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>Estabelecimento das suas temáticas de conteúdo</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-empire-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>Estrutura do primeiro mês de execução</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-empire-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span>Plano de 90 dias pronto para executar</span>
+            </li>
+          </ul>
+        </div>
+
+        <p class="text-empire-muted text-xs md:text-sm mt-8">
+          Enquanto o mundo está no carnaval... <span class="text-empire-gold">VOCÊ CONSTRÓI.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 bg-empire-bg border-t border-empire-border">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <img src="images/logos/Logotipo 04.png" alt="Acelerador de Audiência" class="h-6 w-auto">
+        </div>
+
+        <div class="flex items-center gap-4 text-empire-muted text-xs md:text-sm">
+          <a href="#" class="hover:text-empire-gold transition-colors">Política de Privacidade</a>
+          <span class="text-empire-border">|</span>
+          <a href="#" class="hover:text-empire-gold transition-colors">Termos de Uso</a>
+          <span class="text-empire-border">|</span>
+          <a href="#" class="hover:text-empire-gold transition-colors">Contato</a>
+        </div>
+
+        <p class="text-empire-muted text-xs md:text-sm">
+          © 2026 Acelerador de Audiência.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const closeMenuBtn = document.getElementById('close-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.add('active');
+    });
+
+    closeMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+    });
+
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+      });
+    });
+
+    // Scroll reveal animation
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all fade-in elements
+    document.querySelectorAll('.fade-in-up').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Navbar background on scroll
+    const navbar = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('bg-empire-bg/95');
+      } else {
+        navbar.classList.remove('bg-empire-bg/95');
+      }
+    });
+  </script>
+</body>
+</html>
